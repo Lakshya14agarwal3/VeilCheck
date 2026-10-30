@@ -1,0 +1,18 @@
+# Python cache and bytecode
+__pycache__/
+*.py[cod]
+
+# Virtual environments
+.venv/
+venv/
+env/
+
+# Generated dataset and trained model
+prepared_diabetes.csv
+model.json
+diabetes_model.joblib
+
+# Local environment and editor files
+.env
+.vscode/
+.idea/

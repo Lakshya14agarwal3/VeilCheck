@@ -1,0 +1,9 @@
+fastapi
+uvicorn
+httpx
+tenseal
+numpy
+scikit-learn
+joblib
+datasets
+pandas
