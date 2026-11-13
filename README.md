@@ -54,3 +54,27 @@ python client.py
 ```
 
 Enter the four measurements when prompted. The prediction is a basic demonstration using generated data; it should not be used to make health decisions.
+
+## Run the frontend
+
+To run the interactive web interface, open three terminals in the project folder:
+
+1. Start the inference backend (port 8000):
+
+```bash
+uvicorn server:app --port 8000
+```
+
+2. Start the private encryption proxy (port 8001):
+
+```bash
+uvicorn proxy:app --port 8001
+```
+
+3. Install frontend dependencies and start the Vite dev server:
+
+```bash
+cd frontend && npm install && npm run dev
+```
+
+Open `http://localhost:5173` in your browser. The React application sends clinical values to the proxy at `:8001` (which holds the TenSEAL CKKS private key and encrypts/decrypts), and the proxy forwards only encrypted ciphertexts to the backend server at `:8000`.
